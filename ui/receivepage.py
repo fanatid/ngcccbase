@@ -1,7 +1,9 @@
-from PyQt4 import QtCore, QtGui, uic
+from PyQt4 import QtCore, QtGui
 
 from wallet import wallet
 from tablemodel import TableModel, ProxyModel
+from ui_files import newaddressdialog_ui
+from ui_files import receivepage_ui
 
 
 class AddressTableModel(TableModel):
@@ -17,10 +19,10 @@ class AddressProxyModel(ProxyModel):
     pass
 
 
-class NewAddressDialog(QtGui.QDialog):
+class NewAddressDialog(QtGui.QDialog, newaddressdialog_ui.Ui_Dialog):
     def __init__(self, moniker, parent):
         QtGui.QDialog.__init__(self, parent)
-        uic.loadUi(uic.getUiPath('newaddressdialog.ui'), self)
+        self.setupUi(self)
 
         monikers = wallet.get_all_monikers()
         self.cbMoniker.addItems(monikers)
@@ -33,10 +35,10 @@ class NewAddressDialog(QtGui.QDialog):
         }
 
 
-class ReceivePage(QtGui.QWidget):
+class ReceivePage(QtGui.QWidget, receivepage_ui.Ui_Form):
     def __init__(self, parent):
         QtGui.QWidget.__init__(self, parent)
-        uic.loadUi(uic.getUiPath('receivepage.ui'), self)
+        self.setupUi(self)
 
         self.model = AddressTableModel(self)
         self.proxyModel = AddressProxyModel(self)

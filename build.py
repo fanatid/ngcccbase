@@ -18,7 +18,7 @@ def ls(path):
 import itertools
 
 build_exe_options = {
-    "include_files": list(itertools.chain(ls('ui/forms'), ls('ui/icons')))
+    #"include_files": list(itertools.chain(ls('ui/forms'), ls('ui/icons')))
 }
 
 def mangle_target_name(name):

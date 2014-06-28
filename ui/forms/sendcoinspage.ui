@@ -24,8 +24,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>584</width>
-        <height>301</height>
+        <width>586</width>
+        <height>305</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="topLayout" stretch="0,1">
@@ -63,8 +63,8 @@
         <string>Add &amp;Recipient</string>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../icons/add.png</normaloff>../icons/add.png</iconset>
+        <iconset resource="../../icons.qrc">
+         <normaloff>:/ui/icons/add.png</normaloff>:/ui/icons/add.png</iconset>
        </property>
       </widget>
      </item>
@@ -74,8 +74,8 @@
         <string>Clear &amp;All</string>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../icons/remove.png</normaloff>../icons/remove.png</iconset>
+        <iconset resource="../../icons.qrc">
+         <normaloff>:/ui/icons/remove.png</normaloff>:/ui/icons/remove.png</iconset>
        </property>
       </widget>
      </item>
@@ -98,8 +98,8 @@
         <string>Send</string>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../icons/send.png</normaloff>../icons/send.png</iconset>
+        <iconset resource="../../icons.qrc">
+         <normaloff>:/ui/icons/send.png</normaloff>:/ui/icons/send.png</iconset>
        </property>
       </widget>
      </item>
@@ -113,6 +113,8 @@
   <tabstop>btnClearAll</tabstop>
   <tabstop>btnSend</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../../icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

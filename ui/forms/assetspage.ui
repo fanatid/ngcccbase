@@ -49,8 +49,8 @@
         <string>Issue new asset</string>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../icons/add.png</normaloff>../icons/add.png</iconset>
+        <iconset resource="../../icons.qrc">
+         <normaloff>:/ui/icons/add.png</normaloff>:/ui/icons/add.png</iconset>
        </property>
       </widget>
      </item>
@@ -60,8 +60,8 @@
         <string>Add existing asset</string>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../icons/add.png</normaloff>../icons/add.png</iconset>
+        <iconset resource="../../icons.qrc">
+         <normaloff>:/ui/icons/add.png</normaloff>:/ui/icons/add.png</iconset>
        </property>
       </widget>
      </item>
@@ -71,8 +71,8 @@
         <string>Import asset from JSON</string>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../icons/add.png</normaloff>../icons/add.png</iconset>
+        <iconset resource="../../icons.qrc">
+         <normaloff>:/ui/icons/add.png</normaloff>:/ui/icons/add.png</iconset>
        </property>
       </widget>
      </item>
@@ -133,6 +133,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

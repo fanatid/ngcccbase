@@ -1,0 +1,15 @@
+<RCC>
+  <qresource prefix="/" >
+    <file>ui/icons/add.png</file>
+    <file>ui/icons/assets.png</file>
+    <file>ui/icons/editcopy.png</file>
+    <file>ui/icons/editpaste.png</file>
+    <file>ui/icons/history.png</file>
+    <file>ui/icons/overview.png</file>
+    <file>ui/icons/quit.png</file>
+    <file>ui/icons/receive.png</file>
+    <file>ui/icons/remove.png</file>
+    <file>ui/icons/send.png</file>
+    <file>ui/icons/trade.png</file>
+  </qresource>
+</RCC>

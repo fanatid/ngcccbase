@@ -26,7 +26,7 @@
      <x>0</x>
      <y>0</y>
      <width>850</width>
-     <height>29</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -77,8 +77,8 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>../icons/overview.png</normaloff>../icons/overview.png</iconset>
+    <iconset resource="../../icons.qrc">
+     <normaloff>:/ui/icons/overview.png</normaloff>:/ui/icons/overview.png</iconset>
    </property>
    <property name="text">
     <string>Overview</string>
@@ -92,8 +92,8 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>../icons/send.png</normaloff>../icons/send.png</iconset>
+    <iconset resource="../../icons.qrc">
+     <normaloff>:/ui/icons/send.png</normaloff>:/ui/icons/send.png</iconset>
    </property>
    <property name="text">
     <string>Send</string>
@@ -107,8 +107,8 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>../icons/assets.png</normaloff>../icons/assets.png</iconset>
+    <iconset resource="../../icons.qrc">
+     <normaloff>:/ui/icons/assets.png</normaloff>:/ui/icons/assets.png</iconset>
    </property>
    <property name="text">
     <string>Assets</string>
@@ -122,8 +122,8 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>../icons/receive.png</normaloff>../icons/receive.png</iconset>
+    <iconset resource="../../icons.qrc">
+     <normaloff>:/ui/icons/receive.png</normaloff>:/ui/icons/receive.png</iconset>
    </property>
    <property name="text">
     <string>Receive</string>
@@ -137,8 +137,8 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>../icons/history.png</normaloff>../icons/history.png</iconset>
+    <iconset resource="../../icons.qrc">
+     <normaloff>:/ui/icons/history.png</normaloff>:/ui/icons/history.png</iconset>
    </property>
    <property name="text">
     <string>History</string>
@@ -152,8 +152,8 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>../icons/trade.png</normaloff>../icons/trade.png</iconset>
+    <iconset resource="../../icons.qrc">
+     <normaloff>:/ui/icons/trade.png</normaloff>:/ui/icons/trade.png</iconset>
    </property>
    <property name="text">
     <string>P2P Trade</string>
@@ -172,9 +172,8 @@
   </action>
   <action name="actionExit">
    <property name="icon">
-    <iconset>
-     <normalon>../icons/quit.png</normalon>
-    </iconset>
+    <iconset resource="../../icons.qrc">
+     <normaloff>:/ui/icons/quit.png</normaloff>:/ui/icons/quit.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Exit</string>
@@ -184,6 +183,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

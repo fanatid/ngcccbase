@@ -54,8 +54,8 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../icons/editpaste.png</normaloff>../icons/editpaste.png</iconset>
+        <iconset resource="../../icons.qrc">
+         <normaloff>:/ui/icons/editpaste.png</normaloff>:/ui/icons/editpaste.png</iconset>
        </property>
       </widget>
      </item>
@@ -68,8 +68,8 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../icons/remove.png</normaloff>../icons/remove.png</iconset>
+        <iconset resource="../../icons.qrc">
+         <normaloff>:/ui/icons/remove.png</normaloff>:/ui/icons/remove.png</iconset>
        </property>
       </widget>
      </item>
@@ -164,6 +164,8 @@
   <tabstop>edtAmount</tabstop>
   <tabstop>cbMoniker</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../../icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

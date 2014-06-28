@@ -1,14 +1,17 @@
 import json
-from PyQt4 import QtCore, QtGui, uic
+from PyQt4 import QtCore, QtGui
 
 from wallet import wallet
 from tablemodel import TableModel, ProxyModel
+from ui_files import addassetdialog_ui
+from ui_files import assetspage_ui
+from ui_files import issuedialog_ui
 
 
-class AddAssetDialog(QtGui.QDialog):
+class AddAssetDialog(QtGui.QDialog, addassetdialog_ui.Ui_Dialog):
     def __init__(self, parent, data=None):
         QtGui.QDialog.__init__(self, parent)
-        uic.loadUi(uic.getUiPath('addassetdialog.ui'), self)
+        self.setupUi(self)
 
         for wname in ['edtMoniker', 'edtColorDesc', 'edtUnit']:
             def clearBackground(event, wname=wname):
@@ -56,10 +59,10 @@ class AddAssetDialog(QtGui.QDialog):
         }
 
 
-class IssueCoinsDialog(QtGui.QDialog):
+class IssueCoinsDialog(QtGui.QDialog, issuedialog_ui.Ui_Dialog):
     def __init__(self, parent):
         QtGui.QDialog.__init__(self, parent)
-        uic.loadUi(uic.getUiPath('issuedialog.ui'), self)
+        self.setupUi(self)
 
         self.cbScheme.addItem('epobc')
         self.cbScheme.addItem('obc')
@@ -140,10 +143,10 @@ class AssetProxyModel(ProxyModel):
     pass
 
 
-class AssetsPage(QtGui.QWidget):
+class AssetsPage(QtGui.QWidget, assetspage_ui.Ui_Form):
     def __init__(self, parent):
         QtGui.QWidget.__init__(self, parent)
-        uic.loadUi(uic.getUiPath('assetspage.ui'), self)
+        self.setupUi(self)
 
         self.model = AssetTableModel(self)
         self.proxyModel = AssetProxyModel(self)

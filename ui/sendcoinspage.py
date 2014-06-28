@@ -1,14 +1,17 @@
 import collections
 
-from PyQt4 import QtGui, uic
+from PyQt4 import QtGui
 
 from wallet import wallet
+from ui_files import sendcoinsentry_ui
+from ui_files import sendcoinspage_ui
 
 
-class SendcoinsEntry(QtGui.QFrame):
+class SendcoinsEntry(QtGui.QFrame, sendcoinsentry_ui.Ui_Form):
     def __init__(self, page):
         QtGui.QFrame.__init__(self)
-        uic.loadUi(uic.getUiPath('sendcoinsentry.ui'), self)
+        self.setupUi(self)
+
         self.page = page
 
         for wname in ['edtAddress', 'edtAmount']:
@@ -86,10 +89,10 @@ class SendcoinsEntry(QtGui.QFrame):
         }
 
 
-class SendcoinsPage(QtGui.QWidget):
+class SendcoinsPage(QtGui.QWidget, sendcoinspage_ui.Ui_Form):
     def __init__(self, parent):
         QtGui.QWidget.__init__(self, parent)
-        uic.loadUi(uic.getUiPath('sendcoinspage.ui'), self)
+        self.setupUi(self)
 
         self.btnAddRecipient.clicked.connect(self.btnAddRecipientClicked)
         self.btnClearAll.clicked.connect(self.btnClearAllClicked)

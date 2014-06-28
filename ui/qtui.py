@@ -1,8 +1,7 @@
-from PyQt4 import QtCore, QtGui, uic
-
-import os
 import sys
 import signal
+
+from PyQt4 import QtCore, QtGui
 
 from overviewpage import OverviewPage
 from sendcoinspage import SendcoinsPage
@@ -10,19 +9,9 @@ from assetspage import AssetsPage
 from receivepage import ReceivePage
 from tradepage import TradePage
 from historypage import HistoryPage
+from ui_files import qtui_ui
 
 from wallet import wallet
-
-try:
-    main_file = os.path.abspath(sys.modules['__main__'].__file__)
-except AttributeError:
-    main_file = sys.executable
-ui_path = os.path.join(os.path.dirname(main_file), 'ui', 'forms')
-
-def getUiPath(ui_name):
-    return os.path.join(ui_path, ui_name)
-
-uic.getUiPath = getUiPath
 
 
 class Application(QtGui.QApplication):
@@ -30,10 +19,10 @@ class Application(QtGui.QApplication):
         signal.signal(signal.SIGINT, signal.SIG_DFL)
         QtGui.QApplication.__init__(self, [])
 
-class MainWindow(QtGui.QMainWindow):
+class MainWindow(QtGui.QMainWindow, qtui_ui.Ui_MainWindow):
     def __init__(self):
         QtGui.QMainWindow.__init__(self)
-        uic.loadUi(uic.getUiPath('ngccc.ui'), self)
+        self.setupUi(self)
 
         self.overviewpage = OverviewPage(self)
         self.stackedWidget.addWidget(self.overviewpage)

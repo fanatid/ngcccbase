@@ -1,9 +1,10 @@
-from PyQt4 import QtCore, QtGui, uic
+import logging
+
+from PyQt4 import QtCore, QtGui
 
 from wallet import wallet
 from tablemodel import TableModel, ProxyModel
-
-import logging
+from ui_files import tradepage_ui
 
 
 class OffersTableModel(TableModel):
@@ -25,10 +26,11 @@ class OffersProxyModel(ProxyModel):
         return ProxyModel.data(self, index, role)
 
 
-class TradePage(QtGui.QWidget):
+class TradePage(QtGui.QWidget, tradepage_ui.Ui_Form):
     def __init__(self, parent):
         QtGui.QWidget.__init__(self, parent)
-        uic.loadUi(uic.getUiPath('tradepage.ui'), self)
+        self.setupUi(self)
+
         self.logger = logging.getLogger('ngcccbase.ui.trade')
 
         wallet.p2ptrade_init()

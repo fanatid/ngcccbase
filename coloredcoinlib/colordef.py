@@ -230,7 +230,11 @@ class OBColorDefinition(GenesisColorDefinition):
             for target in targets:
                 composed_tx_spec.add_txout(value=target.get_value(),
                                            target=target)
-        uncolored_needed = ColorTarget.sum(uncolored_targets)
+        if uncolored_targets:
+            uncolored_needed = ColorTarget.sum(uncolored_targets)
+        else:
+            uncolored_needed = SimpleColorValue(colordef=UNCOLORED_MARKER,
+                                                value=0)
         uncolored_inputs, uncolored_total = op_tx_spec.select_coins(uncolored_needed, composed_tx_spec)
         composed_tx_spec.add_txins(uncolored_inputs)
         fee = composed_tx_spec.estimate_required_fee()

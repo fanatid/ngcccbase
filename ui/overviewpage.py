@@ -1,4 +1,4 @@
-from PyQt4 import QtCore, QtGui, uic
+from PyQt4 import QtCore, QtGui
 
 from wallet import wallet
 

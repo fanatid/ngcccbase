@@ -1,7 +1,9 @@
-from PyQt4 import QtCore, QtGui, uic
+from PyQt4 import QtCore, QtGui
 
 from wallet import wallet
 from tablemodel import TableModel
+from ui_files import historypage_ui
+
 
 class HistoryTableModel(TableModel):
     _columns = ['Time', 'Operation', 'Amount', 'Asset', 'Address']
@@ -13,10 +15,10 @@ class HistoryTableModel(TableModel):
         QtCore.Qt.AlignRight | QtCore.Qt.AlignVCenter,
     ]
 
-class HistoryPage(QtGui.QWidget):
+class HistoryPage(QtGui.QWidget, historypage_ui.Ui_Form):
     def __init__(self, parent):
         QtGui.QWidget.__init__(self, parent)
-        uic.loadUi(uic.getUiPath('historypage.ui'), self)
+        self.setupUi(self)
         
         self.model = HistoryTableModel(self)
         self.tableView.setModel(self.model)

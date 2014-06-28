@@ -85,8 +85,8 @@
         <string>New Address</string>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../icons/add.png</normaloff>../icons/add.png</iconset>
+        <iconset resource="../../icons.qrc">
+         <normaloff>:/ui/icons/add.png</normaloff>:/ui/icons/add.png</iconset>
        </property>
       </widget>
      </item>
@@ -99,8 +99,8 @@
         <string>Copy Address</string>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../icons/editcopy.png</normaloff>../icons/editcopy.png</iconset>
+        <iconset resource="../../icons.qrc">
+         <normaloff>:/ui/icons/editcopy.png</normaloff>:/ui/icons/editcopy.png</iconset>
        </property>
       </widget>
      </item>
@@ -145,6 +145,8 @@
   <tabstop>btnNew</tabstop>
   <tabstop>btnCopy</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../../icons.qrc"/>
+ </resources>
  <connections/>
 </ui>
